@@ -43,7 +43,7 @@ The corrected Kraus coefficient for measurement label $`j`$ and eigenphase $`\ph
 
 ```math
 k_j(\phi)=\sum_{r=1}^{M}D_{jr}a_r e^{i(r-h)\phi}.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 The exact sine identities are
@@ -57,7 +57,7 @@ Substituting $`r\mapsto L-r`$ in (1) gives
 
 ```math
 k_j(-\phi)=(-1)^{j+1}k_j(\phi).
-\tag{2}
+\qquad\text{(2)}
 ```
 
 Since the coefficients $`D_{jr}a_r`$ are real, odd $`j`$ has a real $`k_j`$, and even $`j`$ has a purely imaginary $`k_j`$. The more useful consequence of (2) is the target Kraus operator restricted to the plane:
@@ -69,7 +69,7 @@ K_j\big|_{\mathcal H_\phi}
 k_j(\phi) I,&j\text{ odd},\\
 k_j(\phi) J_\phi,&j\text{ even}.
 \end{cases}}
-\tag{3}
+\qquad\text{(3)}
 ```
 
 Thus
@@ -77,7 +77,7 @@ Thus
 ```math
 K_j^\dagger K_j=|k_j(\phi)|^2 I
 \quad\text{on }\mathcal H_\phi.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 Every outcome probability is independent of the input density operator supported on this plane. An odd label leaves that state unchanged; an even label conjugates it by the same involution $`J_\phi`$. No direct implementation of $`J_\phi`$ is assumed or needed.
@@ -105,7 +105,7 @@ By (4), fresh clock rounds have the same outcome distribution regardless of the 
 0\le Z_{\mathrm{first}}\le1,\qquad
 \mathbb EZ_{\mathrm{first}}=p,\qquad
 \mathrm{Var}(Z_{\mathrm{first}})=\kappa_Mp(1-p).
-\tag{5}
+\qquad\text{(5)}
 ```
 
 After termination, further independent executions can reuse the restored target. The state is the same conditional on the complete earlier record, so retaining that classical record does not introduce a hidden target disturbance.
@@ -124,7 +124,7 @@ be the probability of an even label, and let $`N`$ be the number of rounds. If $
 \Pr(N=1)=1-s,
 \qquad
 \Pr(N=n)=s^2(1-s)^{n-2},\quad n\ge2.
-\tag{6}
+\qquad\text{(6)}
 ```
 
 Indeed, after an even first label the number of additional rounds is geometric on $`\{1,2,\ldots\}`$ with success probability $`s`$. It follows that
@@ -135,7 +135,7 @@ Indeed, after an even first label the number of additional rounds is geometric o
 \mathbb EN^2=2+\frac2s,\qquad
 \Pr(N>n)=s(1-s)^{n-1}\quad(n\ge1).
 }
-\tag{7}
+\qquad\text{(7)}
 ```
 
 If $`s=0`$, then $`N=1`$ with certainty.
@@ -144,7 +144,7 @@ For completeness, let $`R|r\rangle=|L-r\rangle`$ be reflection of the path. Its 
 
 ```math
 s=\sum_{r=1}^{M}a_r^2\sin^2((r-h)\phi).
-\tag{8}
+\qquad\text{(8)}
 ```
 
 All $`a_r`$ are nonzero, and the labels $`r=h\pm1`$ exist for $`M\ge3`$. Thus $`s=0`$ implies $`\sin\phi=0`$. Conversely $`\phi=0`$ and $`\phi=\pi`$ make every term zero. Hence $`s>0`$ for every $`0<p<1`$, and restoration occurs almost surely.

@@ -24,14 +24,14 @@ D_{M,p}(j)=\left|
 \frac{2}{M+1}\sum_{r=1}^{M}
 \sin(r\alpha)\sin(jr\alpha)e^{ir\phi}
 \right|^2,\qquad j=1,\ldots,M.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 Changing the Grover eigenphase from $`\phi`$ to $`-\phi`$ leaves (1) unchanged. Assign the measured label the value
 
 ```math
 z_j=\frac12\left(1-\frac{\cos(j\alpha)}{\cos\alpha}\right).
-\tag{2}
+\qquad\text{(2)}
 ```
 
 The statistical interface proved in [model-and-estimator.md](model-and-estimator.md) is
@@ -42,7 +42,7 @@ The statistical interface proved in [model-and-estimator.md](model-and-estimator
 \mathrm{Var}(Z_M)=\kappa_M p(1-p),
 \quad
 \kappa_M=\frac{M-1}{M+1}\tan^2\alpha.
-\tag{3}
+\qquad\text{(3)}
 ```
 
 In particular, $`z_1=0`$, $`z_M=1`$, and the output is deterministic at $`p=0`$ and $`p=1`$. For the clock convention in (1), the largest power is $`G^M`$, not $`G^{M-1}`$. An implementation must charge the complete controlled Grover calls, state preparation, clock operations, measurement, and classical evaluation of (2).
@@ -65,14 +65,14 @@ For one probability likelihood, take $`\ell(\theta)=p(\theta)`$ and $`D_\theta`$
 ```math
 \overline\pi(d\theta,dw)
 =\frac{\rho(\theta)w}{C}\,\mu(d\theta)D_\theta(dw)
-\tag{4}
+\qquad\text{(4)}
 ```
 
 has marginal
 
 ```math
 \pi(d\theta)=\frac{\rho(\theta)\ell(\theta)}{C}\,\mu(d\theta).
-\tag{5}
+\qquad\text{(5)}
 ```
 
 Starting from a positive-weight state, propose $`\theta'\sim k(\theta,\cdot)`$, generate a fresh $`w'\sim D_{\theta'}`$, and accept the pair with probability
@@ -82,7 +82,7 @@ Starting from a positive-weight state, propose $`\theta'\sim k(\theta,\cdot)`$, 
 =1\wedge
 \frac{\rho(\theta')k(\theta',\theta)w'}
 {\rho(\theta)k(\theta,\theta')w}.
-\tag{6}
+\qquad\text{(6)}
 ```
 
 Use the usual Metropolis–Hastings conventions on null or one-way proposal sets. This kernel is reversible with respect to (4).
@@ -116,7 +116,7 @@ Fix $`\theta`$ and suppress it from the notation. For $`N`$ factors, take indepe
 ```math
 \mathbb E\widehat\ell^{\,2}
 =\prod_{i=1}^{N}\bigl[p_i^2+\kappa_{M_i}p_i(1-p_i)\bigr].
-\tag{7}
+\qquad\text{(7)}
 ```
 
 If every $`p_i>0`$, then
@@ -125,7 +125,7 @@ If every $`p_i>0`$, then
 \frac{\mathrm{Var}(\widehat\ell)}{\ell^2}
 =\prod_{i=1}^{N}
 \left(1+\kappa_{M_i}\frac{1-p_i}{p_i}\right)-1.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 **Proof.** Independence factors the first and second moments, and (3) gives the individual second moments. $`\square`$
@@ -137,7 +137,7 @@ A convenient sufficient condition for relative variance at most $`v>0`$ is
 ```math
 \sum_{i=1}^{N}\kappa_{M_i}\frac{1-p_i}{p_i}
 \le\log(1+v),
-\tag{9}
+\qquad\text{(9)}
 ```
 
 because $`\log(1+x)\le x`$. This is sufficient, not necessary. At $`M\ge3`$, convexity of the tangent on $`[0,\pi/4]`$ gives $`\tan\alpha\le4\alpha/\pi`$, hence $`\kappa_M\le16/M^2`$. If $`p_i\ge p_0>0`$, a shared budget obeying
@@ -145,7 +145,7 @@ because $`\log(1+x)\le x`$. This is sufficient, not necessary. At $`M\ge3`$, con
 ```math
 M\ge\max\left\{3,
 4\sqrt{\frac{N(1-p_0)}{p_0\log(1+v)}}\right\}
-\tag{10}
+\qquad\text{(10)}
 ```
 
 therefore suffices. Rounding upward to the next admissible $`M`$ with $`M+1`$ a power of two changes this bound by at most a constant factor. A lower bound such as $`p_0`$ is an assumption, not information provided by the estimator. Selecting a budget using an independent pilot leaves subsequent fixed-budget unbiasedness intact; reusing the pilot outcomes needs a separate argument.
@@ -168,7 +168,7 @@ C_{\mathrm{prepare},i}
 +C_{\mathrm{output},i}
 \right]
 +C_{\mathrm{data}}+C_{\mathrm{product}}.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 All terms in (11) must use a common work or time unit. This is an accounting interface, not a gate bound. If the finite-precision orientation in Section 6 is used, its extra independent sampler execution is also charged. The per-step classical proposal, parameter updates, compilation, acceptance calculation, and any initialization retries are additional costs. Sequential factor processing uses at most the largest factor workspace plus the largest clock and any required ancillas. It still reads all required observation bits and carries out the classical product calculation.
@@ -189,7 +189,7 @@ Take $`p=1/10`$, $`M=7`$, and let $`\overline B_6`$ be the average of six indepe
 \Pr(Z_7=1)
 =\frac{1324-936\sqrt2}{15625}
 \simeq1.89507596021\times10^{-5},
-\tag{12}
+\qquad\text{(12)}
 ```
 
 whereas $`\Pr(\overline B_6=1)=10^{-6}`$. To verify (12), use $`\cos\phi=4/5`$, $`\cos2\phi=7/25`$, and $`\cos3\phi=-44/125`$. The endpoint amplitude, after removing a phase, is
@@ -234,7 +234,7 @@ Since $`\min(x,ry)\ge\min(1,r)\min(x,y)`$,
 \overline{\mathcal A}(\theta,\theta')
 \ge\min(1,r)
 \max\left\{0,1-\frac12\sqrt{v_\theta+v_{\theta'}}\right\}.
-\tag{13}
+\qquad\text{(13)}
 ```
 
 Here $`\mathbb E\min(W,W')=1-\mathbb E|W-W'|/2`$, and independence gives $`\mathbb E(W-W')^2\le v_\theta+v_{\theta'}`$. This controls stationary acceptance averaged over weights. It does not establish a spectral-gap bound, an autocorrelation bound, or a mixing-speed comparison.
@@ -252,7 +252,7 @@ Zero weights can make the logarithm of a likelihood estimate undefined even when
 \qquad
 \|\widetilde\pi-\pi\|_{\mathrm{TV}}
 \le\frac{\sqrt b-\sqrt a}{\sqrt b+\sqrt a}.
-\tag{14}
+\qquad\text{(14)}
 ```
 
 We use $`\|P-Q\|_{\mathrm{TV}}=\tfrac12\int|dP-dQ|`$.
@@ -274,7 +274,7 @@ Suppose the implemented factor estimator remains in $`[0,1]`$, and its mean sati
 |\mathbb E\widetilde Z_i(\theta)-p_i(\theta)|
 \le\eta_i p_i(\theta)(1-p_i(\theta)),
 \qquad 0\le\eta_i<1.
-\tag{15}
+\qquad\text{(15)}
 ```
 
 The $`\eta_i`$ are bounds independent of $`\theta`$. The finite-synthesis theorem must establish (15) for the actual circuit and output rule; an arbitrary absolute circuit error is not the same assumption. Boundedness and (15) imply deterministic correct endpoints. For every positive factor,
@@ -282,7 +282,7 @@ The $`\eta_i`$ are bounds independent of $`\theta`$. The finite-synthesis theore
 ```math
 1-\eta_i\le\frac{\widetilde p_i}{p_i}\le1+\eta_i,
 \qquad \widetilde p_i:=\mathbb E\widetilde Z_i.
-\tag{16}
+\qquad\text{(16)}
 ```
 
 Generate the implemented factor estimates independently. Their product is exactly unbiased for $`\widetilde\ell=\prod_i\widetilde p_i`$, so exact pseudo-marginal acceptance targets $`\widetilde\pi\propto\rho\widetilde\ell`$. Zero sets of $`\ell`$ and $`\widetilde\ell`$ agree. On their positive support, use Lemma 3 with
@@ -296,7 +296,7 @@ It follows that
 ```math
 \|\widetilde\pi-\pi\|_{\mathrm{TV}}
 \le\tanh\left(\frac12\sum_i\mathrm{artanh}\eta_i\right).
-\tag{17}
+\qquad\text{(17)}
 ```
 
 In particular this is $`O(\sum_i\eta_i)`$ when the sum is small, and is $`O(N\eta)`$ for a common small bound $`\eta`$. There is no division by a minimum likelihood probability. The result concerns the invariant target, not finite-run sampling error.
@@ -305,7 +305,7 @@ The interface proved in [finite-precision.md](finite-precision.md) uses a paired
 
 ```math
 |\mathbb E\widetilde Z-p|\le4M^2\sigma_1p(1-p).
-\tag{18}
+\qquad\text{(18)}
 ```
 
 Thus $`\sigma_1\le\eta/(4M^2)`$ suffices for (15), subject to those structural hypotheses. The orientation and Grover operations must use the same compiled sampler. Equation (18) is a circuit-theorem interface; the statistical proof of (17) depends only on (15).
@@ -316,7 +316,7 @@ Output rounding alone has a direct bound. Keep $`z_1=0,z_M=1`$ exact, and choose
 
 ```math
 |\widetilde z_j-z_j|\le\eta z_j(1-z_j).
-\tag{19}
+\qquad\text{(19)}
 ```
 
 Then
@@ -326,7 +326,7 @@ Then
 \le\eta\mathbb E[Z(1-Z)]
 =\eta(1-\kappa_M)p(1-p)
 \le\eta p(1-p).
-\tag{20}
+\qquad\text{(20)}
 ```
 
 For $`M\ge3`$, let $`\mu_M=\min_{2\le j\le M-1}z_j(1-z_j)`$. Nearest rounding to $`b`$ fractional bits satisfies (19) whenever $`2^{-b-1}\le\eta\mu_M`$. Since $`\mu_M=\Theta(M^{-2})`$, $`b=O(\log M+\log(1/\eta))`$ suffices; the leading dependence is $`2\log_2M`$. At $`M=2`$, both outputs are endpoints and need no such rounding. This argument covers the output map, not errors in the quantum measurement distribution.
@@ -342,7 +342,7 @@ Suppose $`p_i^\star`$ denotes the intended-model probability, while $`p_i`$ is t
 ```math
 (1-\beta_i)p_i^\star\le p_i\le(1+\beta_i)p_i^\star,
 \qquad 0\le\beta_i<1.
-\tag{21}
+\qquad\text{(21)}
 ```
 
 The multiplicative intervals in (16) and (21) then compose, and Lemma 3 applies with all $`\eta_i`$ and $`\beta_i`$. A uniform absolute model error alone does not give a likelihood-independent posterior bound. For example, with two equally weighted parameters and true probabilities $`(t^2,t^2)`$, replacing them by $`(t,t^2)`$ changes either probability by at most $`t\to0`$, but the posterior changes from $`(1/2,1/2)`$ to $`(1/(1+t),t/(1+t))`$, whose total variation tends to $`1/2`$. Discretization, imperfect state preparation, truncation, and sampler synthesis therefore require their own justified model-error bounds.

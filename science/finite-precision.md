@@ -33,7 +33,7 @@ The ideal full unitary $`V`$ preserves the canonical path subspace and implement
 
 ```math
 \|\widetilde V-V\|\le\eta_V.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 An irrelevant global phase may be chosen when evaluating (1). Readout uses the exact inverse $`\widetilde V^\dagger`$, not a separately synthesized approximation to $`V^\dagger`$.
@@ -48,7 +48,7 @@ z(b)=
 z_j,&b=(0_{\mathrm{aux}},j),\quad 1\le j\le M,\\
 0,&\text{otherwise.}
 \end{cases}
-\tag{2}
+\qquad\text{(2)}
 ```
 
 Use a deterministic classical output map $`\widetilde z`$ satisfying
@@ -57,7 +57,7 @@ Use a deterministic classical output map $`\widetilde z`$ satisfying
 0\le\widetilde z(b)\le1,\qquad
 |\widetilde z(b)-z(b)|\le\rho,\qquad
 \widetilde z(u)=0.
-\tag{3}
+\qquad\text{(3)}
 ```
 
 In particular, set all auxiliary-label outputs to zero and set the canonical endpoint outputs to exactly zero and one. Evaluate the other values with certified error at most $`\rho`$, then clip to $`[0,1]`$; clipping cannot increase their error. No amplitude lookup table is required.
@@ -86,7 +86,7 @@ Unitary invariance and the triangle inequality give
 ```math
 \|\,|\widetilde\chi_\phi\rangle-|\chi_\phi\rangle\,\|
 \le2\eta_V.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 The total variation distance between the corresponding measurement distributions is at most $`2\eta_V`$: measurement cannot increase trace distance, and pure-state trace distance is at most the Euclidean distance between state vectors. This also bounds the equal mixture of the $`+\phi`$ and $`-\phi`$ distributions.
@@ -99,7 +99,7 @@ For $`x=(1-\cos\phi)/2`$, denote the compiled primitive's output by $`\widetilde
 \mathbb E\widetilde Z_x^2
 &=x^2+\kappa_M x(1-x)+e_2(x).
 \end{aligned}
-\tag{5}
+\qquad\text{(5)}
 ```
 
 The [ideal moment identities](variance-proof.md), (2)–(4), and boundedness give
@@ -110,7 +110,7 @@ The [ideal moment identities](variance-proof.md), (2)–(4), and boundedness giv
 \qquad
 \|e_2\|_{\infty,[0,1]}\le\sigma_2:=2\eta_V+2\rho.
 \quad}
-\tag{6}
+\qquad\text{(6)}
 ```
 
 For the second inequality, use
@@ -125,7 +125,7 @@ The statistical contribution is $`2\eta_V`$, rather than twice that value, becau
 |e_i(x)|\le d_i x,
 \qquad d_i:=2M^2\sigma_i,
 \qquad 0\le x\le1.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 **Proof.** The prepared target state $`A|0\rangle`$ has equal squared weight on the two Grover eigenphases. This remains true for a complex sampler circuit. Consequently every compiled clock moment averages the $`+\phi`$ and $`-\phi`$ contributions with equal weights, even though $`\widetilde V`$ need not be real.
@@ -173,7 +173,7 @@ The clock transform and output map are unchanged in the second branch. Complemen
 |\mathbb EW-p|
 \le4M^2\sigma_1\,p(1-p),
 }
-\tag{8}
+\qquad\text{(8)}
 ```
 
 ```math
@@ -182,7 +182,7 @@ The clock transform and output map are unchanged in the second branch. Complemen
 \le\mathbb E(W-p)^2
 \le\bigl[\kappa_M+4M^2(\sigma_1+\sigma_2)\bigr]p(1-p).
 }
-\tag{9}
+\qquad\text{(9)}
 ```
 
 At $`p=0`$ and $`p=1`$, the output is respectively zero and one with certainty.
@@ -217,7 +217,7 @@ If both $`\eta_V\le s`$ and $`\rho\le s`$, equations (8)–(9) simplify to
 \qquad
 \mathbb E(W-p)^2
 \le(\kappa_M+28M^2s)\,p(1-p).
-\tag{10}
+\qquad\text{(10)}
 ```
 
 For a desired bias bound $`\beta p(1-p)`$ and variance inflation at most $`1+\lambda`$, it is sufficient to choose
@@ -227,7 +227,7 @@ s\le
 \min\!\left\{\frac{\beta}{12M^2},
 \frac{\lambda\kappa_M}{28M^2}\right\},
 \qquad \beta,\lambda>0.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 This conditional moment statement is useful in [positive-weight compositions](positive-weights.md).
@@ -240,7 +240,7 @@ s=\min\!\left\{\frac{1}{28M^4},
 \frac{\varepsilon}{12M^2}\right\},
 \qquad \eta_V\le s,\quad\rho\le s.
 }
-\tag{12}
+\qquad\text{(12)}
 ```
 
 For $`M\ge2`$, $`\kappa_M\ge M^{-2}`$. Indeed, $`\tan\alpha\ge\alpha`$, $`(M-1)/(M+1)\ge1/3`$, and $`M/(M+1)\ge2/3`$ imply $`M^2\kappa_M\ge4\pi^2/27>1`$. Thus (12) guarantees
@@ -249,7 +249,7 @@ For $`M\ge2`$, $`\kappa_M\ge M^{-2}`$. Indeed, $`\tan\alpha\ge\alpha`$, $`(M-1)/
 |\mathbb EW-p|\le\varepsilon/4,
 \qquad
 \mathrm{Var}(W)\le2\kappa_M p(1-p).
-\tag{13}
+\qquad\text{(13)}
 ```
 
 There is no hidden $`\log(1/p)`$ precision cost. To use a smaller variance promise, however, the repetition count still needs a known bound $`v\ge p(1-p)`$.
@@ -281,7 +281,7 @@ If $`\|A-A_\star\|\le\eta_A`$, then
 \bigr\|_1
 \le\|\,|\psi\rangle-|\psi_\star\rangle\,\|
 \le\eta_A.
-\tag{14}
+\qquad\text{(14)}
 ```
 
 Using $`\eta_A\le\varepsilon/4`$ completes the accuracy allocation in the preceding confidence construction. The bias in (14) is **not multiplied by $`M`$**: the Grover operator is exactly the reflection product for the actual $`A|0\rangle`$, and its probability is $`p`$. This reasoning relies on reusing the same $`A`$ and its exact inverse. Errors in individual executions that do not fit that fixed unitary model belong in the noise budget below.
@@ -335,7 +335,7 @@ Suppose the observed output law of one entire oriented sample is within total va
 ```math
 \mathbb E(W_{\mathrm{noisy}}-p)^2
 \le\bigl[\kappa_M+4M^2(\sigma_1+\sigma_2)\bigr]p(1-p)+\nu.
-\tag{15}
+\qquad\text{(15)}
 ```
 
 The second statement follows directly from the bounded test function $`(w-p)^2\in[0,1]`$. A probability-independent fault rate can therefore create a variance or bias floor at an endpoint. The finite-synthesis endpoint theorem does not remove that physical effect.
