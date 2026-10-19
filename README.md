@@ -2,32 +2,38 @@
 
 **Can one coherent run estimate a probability without bias, keep every output between zero and one, and reduce its variance quadratically in the coherent work?** A sine clock and a discrete sine transform give an explicit ideal-circuit construction with all three properties.
 
-Let an available unitary sampler prepare a state whose success probability is $p$. For an integer $M\geq2$, one run returns $Z\in[0,1]$ with
+Let an available unitary sampler prepare a state whose success probability is $`p`$. For an integer $`M\geq2`$, one run returns $`Z\in[0,1]`$ with
 
 ```math
 \mathbb E Z=p,\qquad
-\operatorname{Var}(Z)=\kappa_M p(1-p),\qquad
+\mathrm{Var}(Z)=\kappa_M p(1-p),\qquad
 \kappa_M=\frac{M-1}{M+1}\tan^2\!\left(\frac{\pi}{M+1}\right)
 \sim\frac{\pi^2}{M^2}.
 ```
 
-The implemented family uses $M+1=2^\ell$. Its clock requires two quantum Fourier transforms, reversible arithmetic and $O(\log M)$ clock storage, with **no QRAM or amplitude lookup table**. The direct binary schedule uses exactly $M$ controlled Grover steps, hence $2M+1$ sampler or inverse calls, before optional finite-precision orientation correction. Reflections, clock gates, workspace, measurement and classical readout are additional charged resources.
+The implemented family uses $`M+1=2^\ell`$. Its clock requires two quantum Fourier transforms, reversible arithmetic and $`O(\log M)`$ clock storage, with **no QRAM or amplitude lookup table**. The direct binary schedule uses exactly $`M`$ controlled Grover steps, hence $`2M+1`$ sampler or inverse calls, before optional finite-precision orientation correction. Reflections, clock gates, workspace, measurement and classical readout are additional charged resources.
 
 | Result | Conditions and meaning | Scientific account |
 |---|---|---|
-| Bounded, exactly unbiased output with uniform variance | Ideal rotations and exact real-valued readout; every $p\in[0,1]$ | [Model and estimator](science/model-and-estimator.md), [proof](science/variance-proof.md) |
+| Bounded, exactly unbiased output with uniform variance | Ideal rotations and exact real-valued readout; every $`p\in[0,1]`$ | [Model and estimator](science/model-and-estimator.md), [proof](science/variance-proof.md) |
 | Explicit circuit and reversible counting example | Available sampler and exact inverse; computable success reflection; no QRAM | [Circuits and resources](science/circuits-and-resources.md) |
 | Controlled relative bias after gate synthesis | Paired clock circuit and inverse; an independent Bernoulli orientation sample; faithful execution of compiled gates | [Finite precision](science/finite-precision.md) |
 | Nonnegative likelihood weights and independent products | Exact target identity in the ideal model; quantified target perturbation after synthesis | [Positive weights](science/positive-weights.md) |
 | Separate state-restoration extension | Ideal circuit; almost-sure restoration in at most two expected rounds, with an unbounded tail | [Restoration](science/restoration.md) |
 
-The contribution is the conjunction of positivity, exact ideal unbiasedness, a deterministic costly-call budget and a variance proportional to $p(1-p)$. Sine probe states, cosine observables, quantum sine transforms and general amplitude-estimation speedups are established ingredients. The [related-work comparison](references/related-work.md) identifies those ingredients and distinguishes this construction from existing nearly unbiased and hybrid estimators. No new generic precision exponent is claimed.
+The contribution is the conjunction of positivity, exact ideal unbiasedness, a deterministic costly-call budget and a variance proportional to $`p(1-p)`$. Sine probe states, cosine observables, quantum sine transforms and general amplitude-estimation speedups are established ingredients. The [related-work comparison](references/related-work.md) identifies those ingredients and distinguishes this construction from existing nearly unbiased and hybrid estimators. No new generic precision exponent is claimed.
 
 ## Read the science
 
 Begin with the [model and operational construction](science/model-and-estimator.md), then follow the [variance proof](science/variance-proof.md). The [circuit ledger](science/circuits-and-resources.md) explains how the mathematical measurement is realized and what it costs. [Finite precision](science/finite-precision.md) connects that ideal result to compiled gates. The [resource interpretation](science/interpretation.md) joins these results and explains the relevant comparisons.
 
 The [positive-weight application](science/positive-weights.md) and [ideal restoration mode](science/restoration.md) can be read independently after the core construction. [Primary references](references/related-work.md) and the [structured bibliography](references/bibliography.bib) support attribution and further checking. The [LLM reading guide](llms.txt) maps questions to authoritative files.
+
+## Learn the construction
+
+The [30-milestone map](learning/MILESTONES.md) connects 11 background milestones to 19 covering the estimator, implementation, applications and final resource comparison. It expresses the project's scientific dependencies and understanding targets.
+
+The single educational anchor is **Lin Lin, _Lecture Notes on Quantum Algorithms for Scientific Computation_, March 3, 2022 revision**. The [source-to-project bridge](learning/LIN_BRIDGE.md) identifies the relevant sections, translates notation, and works through a complete three-outcome example before deriving the mean, variance and Fourier implementation. It then connects finite precision, positive weights and restoration to their exact assumptions. The linked scientific pages provide the full statements and proofs.
 
 ## Reproduce the finite checks
 
