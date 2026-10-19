@@ -1,0 +1,101 @@
+{
+  "fourier_embedding": [
+    {
+      "M": 3,
+      "dst_error": 3.3727788579399394e-16,
+      "leakage": 5.625756645598754e-17,
+      "mean_error": 1.887379141862766e-15,
+      "preparation_error": 3.364202628593443e-16,
+      "qft_error": 1.415262216750919e-15,
+      "variance_error": 1.6653345369377348e-16
+    },
+    {
+      "M": 7,
+      "dst_error": 8.331297329690976e-16,
+      "leakage": 8.874182980005507e-17,
+      "mean_error": 2.6645352591003757e-15,
+      "preparation_error": 2.9199907795611497e-16,
+      "qft_error": 2.222006751886933e-15,
+      "variance_error": 6.938893903907228e-17
+    },
+    {
+      "M": 15,
+      "dst_error": 8.885756057214558e-16,
+      "leakage": 6.631357342690402e-17,
+      "mean_error": 2.6645352591003757e-15,
+      "preparation_error": 2.8363012029969537e-16,
+      "qft_error": 3.4678089863411365e-15,
+      "variance_error": 2.42861286636753e-17
+    },
+    {
+      "M": 31,
+      "dst_error": 2.040058409292145e-15,
+      "leakage": 6.415642081249086e-17,
+      "mean_error": 2.9976021664879227e-15,
+      "preparation_error": 2.3181378624783135e-16,
+      "qft_error": 5.0889111799286656e-15,
+      "variance_error": 4.119968255444917e-18
+    },
+    {
+      "M": 63,
+      "dst_error": 3.3931280399425385e-15,
+      "leakage": 5.594942786875837e-17,
+      "mean_error": 3.552713678800501e-15,
+      "preparation_error": 1.732754489312676e-16,
+      "qft_error": 7.242134570536323e-15,
+      "variance_error": 2.3852447794681098e-18
+    }
+  ],
+  "general_grover_input": {
+    "common_power_shift_error": 4.440892098500626e-16,
+    "max_distribution_error": 4.829470157119431e-15
+  },
+  "illustrative_ledger": {
+    "CCX": 294,
+    "CP": 12,
+    "CX": 24,
+    "CZ": 14,
+    "H": 57,
+    "M": 7,
+    "SWAP": 4,
+    "X": 338,
+    "Z": 11,
+    "peak_qubits": 19,
+    "sampler_width": 8
+  },
+  "reversible_logic": {
+    "basis_cases": 2594,
+    "cnf_examples": [
+      {
+        "clauses": 3,
+        "counts": {
+          "CCX": 12,
+          "X": 15
+        },
+        "n": 3,
+        "satisfying": 5,
+        "width": 8
+      },
+      {
+        "clauses": 4,
+        "counts": {
+          "CCX": 17,
+          "X": 16
+        },
+        "n": 4,
+        "satisfying": 8,
+        "width": 11
+      }
+    ]
+  },
+  "status": "passed",
+  "toffoli_decomposition": {
+    "counts": {
+      "CX": 6,
+      "H": 2,
+      "T": 4,
+      "TDG": 3
+    },
+    "max_error": 2.779295991935394e-16
+  }
+}

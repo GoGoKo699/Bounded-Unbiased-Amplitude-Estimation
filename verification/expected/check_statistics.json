@@ -1,0 +1,62 @@
+{
+  "convex_order_obstruction": {
+    "M": 7,
+    "classical_endpoint_probability": 1e-06,
+    "classical_samples": 6,
+    "classical_stop_loss": 5e-08,
+    "classical_variance": 0.015,
+    "convex_test_threshold": 0.95,
+    "p": 0.1,
+    "quantum_endpoint_probability": 1.89507596021e-05,
+    "quantum_stop_loss": 9.47537980106e-07,
+    "quantum_variance": 0.0115811690796
+  },
+  "dependencies": "Python standard library",
+  "equilibrium_acceptance_bound": {
+    "bound_factor": 0.42031772865,
+    "minimum_bound_slack": 0.00175635476773,
+    "proposal_pair_ratios_checked": 5
+  },
+  "moments": {
+    "cases": 66,
+    "max_mean_error": 1.7763568394e-15,
+    "max_normalization_error": 1.7763568394e-15,
+    "max_variance_error": 1.11022302463e-16
+  },
+  "physical_clock_labels": "r=1,...,M",
+  "posterior_perturbation": {
+    "absolute_model_error_example": 9.99999e-07,
+    "actual_total_variation": 0.0161081984422,
+    "model_example_total_variation": 0.499999000001,
+    "reweighting_bound": 0.0500200581889,
+    "sharp_example_error": 6.93889390391e-17
+  },
+  "products": {
+    "enumerated_outcomes": 84,
+    "likelihood": 0.022204,
+    "mean_error": 1.04083408559e-17,
+    "relative_variance": 5.95552106832,
+    "second_moment_error": 1.30104260698e-18
+  },
+  "pseudo_marginal_balance": {
+    "max_detailed_balance_error": 3.46944695195e-18,
+    "max_invariance_error": 2.77555756156e-17,
+    "max_posterior_marginal_error": 3.33066907388e-16,
+    "positive_weight_states": 11
+  },
+  "rounding_and_orientation": {
+    "cases": 35,
+    "fractional_bits_by_M": {
+      "15": 11,
+      "3": 8,
+      "31": 13,
+      "4": 8,
+      "7": 9
+    },
+    "max_mean_bias_fraction": 0.691456495699,
+    "max_oriented_identity_error": 2.22044604925e-16,
+    "max_pointwise_rounding_fraction": 0.716060527583,
+    "rounding_eta": 0.01
+  },
+  "status": "passed"
+}
