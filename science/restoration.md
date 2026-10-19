@@ -88,12 +88,13 @@ For the usual prepared state $`|\psi\rangle=A|0\rangle`$, its two eigenphase wei
 
 Initialize a classical parity bit to zero. Perform the following procedure.
 
-1. Run a corrected round, measure its clock label $`j`$, and save the first round's number
-   ```math
-   Z_{\mathrm{first}}=\frac{1-\cos(j\alpha)/\cos\alpha}{2}.
-   ```
+1. Run a corrected round, measure its clock label $`j`$, and save the first round's number $`Z_{\mathrm{first}}`$ defined below.
 2. Toggle the parity bit exactly when $`j`$ is even.
 3. If the bit is zero, stop. Otherwise reset the clock and perform another corrected round on the same target state.
+
+```math
+Z_{\mathrm{first}}=\frac{1-\cos(j\alpha)/\cos\alpha}{2}.
+```
 
 Equivalently, an odd first label stops immediately. An even first label is followed by rounds until the next even label. The target is retained coherently throughout the procedure; measuring and resetting the clock does not end that target's coherent computation.
 

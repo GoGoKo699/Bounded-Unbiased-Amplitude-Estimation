@@ -55,11 +55,11 @@ One sample consists of the following steps.
 1. Prepare $`|a\rangle\otimes|\psi\rangle`$.
 2. Apply $`\sum_{r=1}^{M}|r\rangle\langle r|\otimes G^r`$.
 3. Apply $`D`$ to the clock and measure its label $`j\in\{1,\ldots,M\}`$.
-4. Return the real number
+4. Return the real number defined below.
 
-   ```math
-   Z=z_j=\frac{1-\cos(j\alpha)/c}{2}.
-   ```
+```math
+Z=z_j=\frac{1-\cos(j\alpha)/c}{2}.
+```
 
 Only the clock is measured. This basic procedure need not restore the target state. It requires neither an estimate of $`p`$ nor a likelihood fit, acceptance test, or postselection.
 
