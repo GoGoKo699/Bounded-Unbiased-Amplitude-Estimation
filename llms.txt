@@ -1,0 +1,55 @@
+# Bounded Unbiased Amplitude Estimation
+
+This repository studies a bounded probability estimator obtained from a sine
+clock and a type-I discrete sine transform. Its ideal mean is p and its variance
+is kappa_M p(1-p), where kappa_M=((M-1)/(M+1))*tan(pi/(M+1))^2.
+The complete scientific account is organized by topic under science/.
+
+Canonical entrypoints:
+- README.md: question, principal results, reading routes, reproduction and scope.
+- science/model-and-estimator.md: sampler access, probability convention,
+  physical clock r=1,...,M, output law and exact ideal theorem.
+- science/variance-proof.md: path adjacency, exact first and second moments,
+  endpoint behavior and independent repetition.
+- science/circuits-and-resources.md: odd embedding, Fourier implementation,
+  controlled Grover gates, explicit reversible 3CNF sampler and logical ledger.
+- science/finite-precision.md: fixed compiled sampler, paired inverse, polynomial
+  endpoint stability, Bernoulli orientation, rounding, synthesis and error budgets.
+- science/positive-weights.md: likelihood weights, product moments, relative
+  target perturbation and the limits of Markov-chain comparisons.
+- science/restoration.md: separate ideal parity-restoration mode and its tail.
+- science/interpretation.md: connected significance and resource comparisons.
+- references/related-work.md: imported ingredients, closest theorem comparisons
+  and the limits of the literature assessment.
+- references/bibliography.bib: primary bibliographic identities.
+- verification/README.md: reproducible commands, expected outputs and scope.
+- verification/run_all.py: finite verification suite.
+
+Reader routes:
+- Story: model-and-estimator, variance-proof, circuits-and-resources,
+  finite-precision, then interpretation.
+- Theorem: read the exact assumptions in model-and-estimator and the relevant
+  authoritative proof. Introductory summaries do not replace those conditions.
+- Implementation: circuits-and-resources and finite-precision; charge sampler,
+  inverse, reflections, workspace, clock synthesis, output arithmetic and shots.
+- Statistics: positive-weights after the main estimator theorem; retain the
+  distinction between target correctness and sampling efficiency.
+- Reproduction: read verification/README.md and execute the documented commands.
+
+Preserve these distinctions:
+- p is a success probability, not its square-root amplitude.
+- Exact unbiasedness is an ideal-circuit statement; finite synthesis is biased
+  with a quantified relative bound, not an exactly unbiased native-gate algorithm.
+- The efficient family is M+1 a power of two. Physical exponents r=1,...,M
+  use M controlled Grover calls, not M-1 in the direct binary schedule.
+- The actual compiled sampler and its gate-sequence inverse define the target.
+  Error against a separate intended sampler is an additional model term.
+- The deterministic call budget belongs to destructive estimation. Ideal
+  restoration uses at most two rounds in expectation and has no uniform cap.
+- Positive unbiased weights preserve a pseudo-marginal target but do not imply
+  universal improvement in mixing or convex order.
+- Standard amplitude-estimation and hybrid precision exponents are prior work.
+- Logical gates, circuit width, total work, coherent depth and physical runtime
+  are distinct resources. No QRAM or free data-loading oracle is assumed.
+- Finite numerical checks are evidence for tested cases, not universal proofs
+  or external peer review. Read primary attribution before claiming originality.

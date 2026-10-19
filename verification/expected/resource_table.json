@@ -1,0 +1,47 @@
+{
+  "rows": [
+    {
+      "M": 3,
+      "equivalent_bernoulli_samples": 2.0,
+      "equivalent_samples_per_sampler_call": 0.285714,
+      "kappa": 0.5,
+      "sampler_or_inverse_calls": 7
+    },
+    {
+      "M": 7,
+      "equivalent_bernoulli_samples": 7.771236,
+      "equivalent_samples_per_sampler_call": 0.518082,
+      "kappa": 0.12867965644,
+      "sampler_or_inverse_calls": 15
+    },
+    {
+      "M": 15,
+      "equivalent_bernoulli_samples": 28.884734,
+      "equivalent_samples_per_sampler_call": 0.931766,
+      "kappa": 0.03462036366,
+      "sampler_or_inverse_calls": 31
+    },
+    {
+      "M": 31,
+      "equivalent_bernoulli_samples": 109.959327,
+      "equivalent_samples_per_sampler_call": 1.745386,
+      "kappa": 0.009094271752,
+      "sampler_or_inverse_calls": 63
+    },
+    {
+      "M": 63,
+      "equivalent_bernoulli_samples": 427.711032,
+      "equivalent_samples_per_sampler_call": 3.367803,
+      "kappa": 0.002338027138,
+      "sampler_or_inverse_calls": 127
+    },
+    {
+      "M": 127,
+      "equivalent_bernoulli_samples": 1685.719006,
+      "equivalent_samples_per_sampler_call": 6.610663,
+      "kappa": 0.000593218678,
+      "sampler_or_inverse_calls": 255
+    }
+  ],
+  "scope": "sampler_calls_only"
+}
