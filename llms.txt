@@ -27,6 +27,8 @@ Canonical entrypoints:
   and the limits of the literature assessment.
 - references/bibliography.bib: primary bibliographic identities.
 - verification/README.md: reproducible commands, expected outputs and scope.
+- verification/REVIEW.md: inspected content revision, review scope and actual
+  hosted mathematical-rendering checks.
 - verification/run_all.py: finite verification suite.
 
 Reader routes:

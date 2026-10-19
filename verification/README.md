@@ -58,6 +58,8 @@ The first command runs every script successfully before replacing any reference 
 
 ## Proof and implementation boundaries
 
+The [review record](REVIEW.md) identifies the inspected scientific revision and the actual GitHub mathematical-rendering checks.
+
 The universal moment identities are proved in [Variance proof](../science/variance-proof.md). The endpoint-aware synthesis guarantee is proved in [Finite precision](../science/finite-precision.md), and the unbounded-tail restoration law in [Ideal restoration](../science/restoration.md). Finite enumeration cannot replace those proofs.
 
 The [logical resource ledger](../science/circuits-and-resources.md) specifies explicit gates before rotation synthesis and a cost interface for a certified native compiler. This suite does not run that compiler, choose an error-correcting code, emulate physical noise, or establish a wall-clock advantage. Dense state-vector calculations are small-instance verification methods, not efficient classical replacements for the general quantum task. The scientific source and attribution comparisons are documented in [Related work](../references/related-work.md), independently of the numerical suite.
