@@ -7,6 +7,10 @@ The complete scientific account is organized by topic under science/.
 
 Canonical entrypoints:
 - README.md: question, principal results, reading routes, reproduction and scope.
+- learning/MILESTONES.md: exactly 30 project-defined understanding targets,
+  ordered as 11 background/preliminary and 19 narrative/innovation milestones.
+- learning/LIN_BRIDGE.md: the single selected educational anchor, Lin Lin's
+  March 3, 2022 notes; source sections, notation, worked example and derivations.
 - science/model-and-estimator.md: sampler access, probability convention,
   physical clock r=1,...,M, output law and exact ideal theorem.
 - science/variance-proof.md: path adjacency, exact first and second moments,
@@ -26,6 +30,9 @@ Canonical entrypoints:
 - verification/run_all.py: finite verification suite.
 
 Reader routes:
+- Learning: use learning/MILESTONES.md as the common dependency map, then
+  learning/LIN_BRIDGE.md and its linked scientific statements. The selected
+  anchor is not the January arXiv version or later Lin-Wiebe live notes.
 - Story: model-and-estimator, variance-proof, circuits-and-resources,
   finite-precision, then interpretation.
 - Theorem: read the exact assumptions in model-and-estimator and the relevant
